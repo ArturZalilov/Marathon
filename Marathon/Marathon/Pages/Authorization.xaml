@@ -1,0 +1,41 @@
+﻿<Page x:Class="Marathon2021.Pages.Authorization"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Marathon2021.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="620" d:DesignWidth="896"
+      Title="Authorization">
+    <Page.Resources>
+        <ControlTemplate TargetType="{x:Type Button}" x:Key="btTemplate">
+            <Border Background="#f2f2f2" BorderBrush="Gray" BorderThickness="1" CornerRadius="5">
+                <ContentPresenter Content="{TemplateBinding Content}"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Border>
+        </ControlTemplate>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Fill="#505050"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="24" Margin="145,0,0,0" Foreground="White" FontWeight="Bold" FontFamily="Verdana" Text="MARATHON SKILLS 2021" VerticalAlignment="Center"/>
+        <Button Content="Назад" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Center" Height="35" Width="85" FontSize="19" VerticalContentAlignment="Center" Click="button_back_Click"/>
+        <TextBlock Foreground="Black" HorizontalAlignment="Center" Margin="0 30 0 0" Grid.Row="1" FontSize="26" TextWrapping="Wrap" Text="Форма авторизации" VerticalAlignment="Top"/>
+        <TextBlock Foreground="Black" HorizontalAlignment="Center" Margin="0 90 0 0" Grid.Row="1" FontSize="19" TextWrapping="Wrap" TextAlignment="Center"
+            Text="Пожалуйста, авторизуйтесь в системе, используя ваш адрес электронной почты и пароль." VerticalAlignment="Top" Width="710" Height="98"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="18" Margin="265,171,0,0" Grid.Row="1" Text="Email:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="18" Margin="237,217,0,0" Grid.Row="1" Text="Password:" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbEmail" HorizontalAlignment="Left" Height="27" Margin="340,167,0,0" Grid.Row="1" VerticalAlignment="Top" Width="348"/>
+        <Button Margin="0,0,470,260" Template="{StaticResource btTemplate}" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="32" Width="86" Click="AuthorizationClick">
+            <TextBlock Text="Login" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="17"/>
+        </Button>
+        <Button Margin="0,0,360,260" Template="{StaticResource btTemplate}" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="32" Width="90" Click="button_back_Click">
+            <TextBlock Text="Cancel" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="17"/>
+        </Button>
+        <TextBox x:Name="tbPassword" HorizontalAlignment="Left" Height="27" Margin="340,215,0,0" Grid.Row="1" VerticalAlignment="Top" Width="348"/>
+    </Grid>
+</Page>
